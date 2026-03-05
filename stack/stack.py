@@ -1,16 +1,36 @@
-text = "((()))"
-result = None
+class Stack:
+    def __init__(self):
+        self.data = []
 
-sum = 0
-for l in text:
-    if l == "(":
-        sum += 1
-    elif l == ")":
-        sum -= 1
+    def __str__(self):
+        return f'Stack({self.data})'
 
-if sum == 0:
-    result = "OK"
-else:
-    result = "FAIL"
+    def push(self, item):
+        self.data.append(item)
 
-print(result)
+    def pop(self):
+        if self.is_empty():
+            return None
+        return self.data.pop()
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.data[-1]
+
+    def is_empty(self):
+        return len(self.data) == 0
+
+    def size(self):
+        return len(self.data)
+
+
+if __name__ == "__main__":
+    s = Stack()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    print(s)
+    print("pop", s.pop())
+    print("peek", s.peek())
+    print("size", s.size())
