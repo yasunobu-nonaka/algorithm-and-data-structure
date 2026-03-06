@@ -1,5 +1,8 @@
 class MyQueue():
-    """Pythonで学ぶアルゴリズムとデータ構造徹底理解 p.89"""
+    """
+    Pythonリストを使用したキューの実装
+    参考：Pythonで学ぶアルゴリズムとデータ構造徹底理解 p.89
+    """
 
     def __init__(self):
         """Constructor for MyQueue"""
