@@ -4,10 +4,10 @@ def insertion_sort(my_list):
         return None
 
     # ソート済みリスト
-    sorted = []
+    sorted_list = []
 
     # リストの最初の要素のみを入れて初期化
-    sorted.append(my_list[0])
+    sorted_list.append(my_list[0])
 
     for i in range(1, len(my_list)):
         # リストから値を取り出す
@@ -15,17 +15,20 @@ def insertion_sort(my_list):
 
         # ソート済みリストの値を左から比べる
         j = 0
-        item = sorted[j]
-        while takenout > item:
+        while j < len(sorted_list) and takenout > sorted_list[j]:
             j += 1
-            item = sorted[j]
 
-        sorted.insert(j, takenout)
+        sorted_list.insert(j, takenout)
 
-    return sorted
+    return sorted_list
 
 
 if __name__ == "__main__":
-    arr = [10, 2, 4, 1, 5, 7]
+    import random
+
+    arr = list(range(1, 31))
+    random.shuffle(arr)
+
+    print("Original", arr)
     result = insertion_sort(arr)
-    print(result)
+    print("Result", result)
